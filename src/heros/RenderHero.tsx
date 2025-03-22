@@ -21,5 +21,6 @@ export const RenderHero: React.FC<Page['hero']> = (props) => {
 
   if (!HeroToRender) return null
 
+  //@ts-ignore
   return <HeroToRender {...props} />
 }
