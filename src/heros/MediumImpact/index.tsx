@@ -1,6 +1,16 @@
 import React from 'react'
-import type { Page } from '@/payload-types'
-export const MediumImpactHero: React.FC<Page['hero']> = () => {
+interface HighImpactHeroProps {
+  title: string
+  leadText: string
+  highlightText: string
+  images: Array<{
+    image: {
+      url: string
+      alt: string
+    }
+  }>
+}
+export const MediumImpactHero: React.FC<HighImpactHeroProps> = ({ leadText, highlightText, title, images }) => {
   return (
     <div className="">
       <div className="container mb-8">

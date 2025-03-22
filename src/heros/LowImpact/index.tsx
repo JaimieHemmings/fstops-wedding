@@ -2,17 +2,19 @@ import React from 'react'
 
 import type { Page } from '@/payload-types'
 
-type LowImpactHeroType =
-  | {
-      children?: React.ReactNode
-      richText?: never
+interface HighImpactHeroProps {
+  title: string
+  leadText: string
+  highlightText: string
+  images: Array<{
+    image: {
+      url: string
+      alt: string
     }
-  | (Omit<Page['hero'], 'richText'> & {
-      children?: never
-      richText?: Page['hero']
-    })
+  }>
+}
 
-export const LowImpactHero: React.FC<LowImpactHeroType> = ({ children, richText }) => {
+export const LowImpactHero: React.FC<HighImpactHeroProps> = ({ leadText, highlightText, title, images }) => {
   return (
     <div className="container mt-16">
       <div className="max-w-[48rem]">
