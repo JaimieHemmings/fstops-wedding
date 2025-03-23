@@ -1,5 +1,6 @@
 // storage-adapter-import-placeholder
 import { postgresAdapter } from '@payloadcms/db-postgres'
+
 import { s3Storage } from '@payloadcms/storage-s3'
 import sharp from 'sharp' // sharp-import
 import path from 'path'
