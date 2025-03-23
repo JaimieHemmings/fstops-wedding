@@ -162,7 +162,7 @@ export interface Page {
     video?: (number | null) | Media;
     media?: (number | null) | Media;
   };
-  layout: (CallToActionBlock | ContentBlock | MediaBlock | ArchiveBlock | FormBlock | BigTextblock)[];
+  layout: (CallToActionBlock | ContentBlock | MediaBlock | ArchiveBlock | FormBlock | BigTextblock | BasicGridBlock)[];
   meta?: {
     title?: string | null;
     /**
@@ -710,6 +710,20 @@ export interface BigTextblock {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "BasicGridBlock".
+ */
+export interface BasicGridBlock {
+  intro: string;
+  featuredImage: number | Media;
+  ctaImage?: (number | null) | Media;
+  ctaTitle: string;
+  ctaText: string;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'basicGridBlock';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "redirects".
  */
 export interface Redirect {
@@ -993,6 +1007,7 @@ export interface PagesSelect<T extends boolean = true> {
         archive?: T | ArchiveBlockSelect<T>;
         formBlock?: T | FormBlockSelect<T>;
         bigTextBlock?: T | BigTextblockSelect<T>;
+        basicGridBlock?: T | BasicGridBlockSelect<T>;
       };
   meta?:
     | T
@@ -1098,6 +1113,19 @@ export interface FormBlockSelect<T extends boolean = true> {
  */
 export interface BigTextblockSelect<T extends boolean = true> {
   text?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "BasicGridBlock_select".
+ */
+export interface BasicGridBlockSelect<T extends boolean = true> {
+  intro?: T;
+  featuredImage?: T;
+  ctaImage?: T;
+  ctaTitle?: T;
+  ctaText?: T;
   id?: T;
   blockName?: T;
 }
