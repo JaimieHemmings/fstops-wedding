@@ -39,6 +39,9 @@ export const hero: Field = {
     {
       name: 'title',
       type: 'text',
+      admin: {
+        condition: (_, { type } = {}) => ['highImpact'].includes(type),
+      },
     },
     {
       name: 'subtitle',

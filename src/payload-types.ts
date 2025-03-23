@@ -162,7 +162,7 @@ export interface Page {
     video?: (number | null) | Media;
     media?: (number | null) | Media;
   };
-  layout: (CallToActionBlock | ContentBlock | MediaBlock | ArchiveBlock | FormBlock)[];
+  layout: (CallToActionBlock | ContentBlock | MediaBlock | ArchiveBlock | FormBlock | BigTextblock)[];
   meta?: {
     title?: string | null;
     /**
@@ -700,6 +700,16 @@ export interface Form {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "BigTextblock".
+ */
+export interface BigTextblock {
+  text: string;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'bigTextBlock';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "redirects".
  */
 export interface Redirect {
@@ -982,6 +992,7 @@ export interface PagesSelect<T extends boolean = true> {
         mediaBlock?: T | MediaBlockSelect<T>;
         archive?: T | ArchiveBlockSelect<T>;
         formBlock?: T | FormBlockSelect<T>;
+        bigTextBlock?: T | BigTextblockSelect<T>;
       };
   meta?:
     | T
@@ -1078,6 +1089,15 @@ export interface FormBlockSelect<T extends boolean = true> {
   form?: T;
   enableIntro?: T;
   introContent?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "BigTextblock_select".
+ */
+export interface BigTextblockSelect<T extends boolean = true> {
+  text?: T;
   id?: T;
   blockName?: T;
 }

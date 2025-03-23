@@ -59,6 +59,12 @@ const config = {
         gold: {
           DEFAULT: 'rgb(255, 228, 174)',
         },
+        jet: {
+          DEFAULT: '#111112',
+        },
+        cream: {
+          DEFAULT: '#f1f1f1',
+        },
         accent: {
           DEFAULT: 'hsl(var(--accent))',
           foreground: 'hsl(var(--accent-foreground))',
