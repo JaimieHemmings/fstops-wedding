@@ -39,43 +39,34 @@ export const hero: Field = {
       required: true,
     },
     {
-      name: 'title',
-      type: 'text',
-      required: true,
-    },
-    {
-      name: 'leadText',
-      type: 'text',
-      required: true,
-    },
-    {
-      name: 'highlightText',
-      type: 'text',
-      required: true,
-    },
-    // {
-    //   name: 'media',
-    //   type: 'upload',
-    //   admin: {
-    //     condition: (_, { type } = {}) => ['highImpact', 'mediumImpact'].includes(type),
-    //   },
-    //   relationTo: 'media',
-    //   required: true,
-    // },
-    {
-      name: 'images',
-      label: 'Images',
-      type: 'array',
-      maxRows: 4,
-      fields: [
-        {
-          name: 'image',
-          type: 'upload',
-          relationTo: 'media',
-          required: true,
+      name: 'richText',
+      type: 'richText',
+      editor: lexicalEditor({
+        features: ({ rootFeatures }) => {
+          return [
+            ...rootFeatures,
+            HeadingFeature({ enabledHeadingSizes: ['h1', 'h2', 'h3', 'h4'] }),
+            FixedToolbarFeature(),
+            InlineToolbarFeature(),
+          ]
         },
-      ],
-    }
+      }),
+      label: false,
+    },
+    linkGroup({
+      overrides: {
+        maxRows: 2,
+      },
+    }),
+    {
+      name: 'media',
+      type: 'upload',
+      admin: {
+        condition: (_, { type } = {}) => ['highImpact', 'mediumImpact'].includes(type),
+      },
+      relationTo: 'media',
+      required: true,
+    },
   ],
   label: false,
 }
