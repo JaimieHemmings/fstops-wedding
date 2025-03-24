@@ -33,7 +33,7 @@ const TestimonialsClient: React.FC<TestimonialsClientProps> = ({ reviews }) => {
         <div className="block md:flex flex-row pt-20 h-full">
           <div className="basis-1/3 flex flex-col justify-between">
             <h3 className="inter opacity-[0.6] font-semibold text-2xl max-w-[500px]">
-              Here's what people have to say about working together. Real moments, real experiences, real feedback.
+              Here&apos;s what people have to say about working together. Real moments, real experiences, real feedback.
             </h3>
           </div>
           <div className="basis-2/3 px-5 relative min-h-[400px] overflow-hidden max-md:mt-10">
