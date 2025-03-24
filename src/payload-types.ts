@@ -173,6 +173,7 @@ export interface Page {
     | BigTextblock
     | BasicGridBlock
     | OfferBlock
+    | BigCtablock
   )[];
   meta?: {
     title?: string | null;
@@ -759,6 +760,19 @@ export interface OfferBlock {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "bigCtablock".
+ */
+export interface BigCtablock {
+  image: number | Media;
+  title: string;
+  paragraph: string;
+  link?: (number | null) | Page;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'bigCta';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "reviews".
  */
 export interface Review {
@@ -1060,6 +1074,7 @@ export interface PagesSelect<T extends boolean = true> {
         bigTextBlock?: T | BigTextblockSelect<T>;
         basicGridBlock?: T | BasicGridBlockSelect<T>;
         offerBlock?: T | OfferBlockSelect<T>;
+        bigCta?: T | BigCtablockSelect<T>;
       };
   meta?:
     | T
@@ -1201,6 +1216,18 @@ export interface OfferBlockSelect<T extends boolean = true> {
         icon?: T;
         id?: T;
       };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "bigCtablock_select".
+ */
+export interface BigCtablockSelect<T extends boolean = true> {
+  image?: T;
+  title?: T;
+  paragraph?: T;
+  link?: T;
   id?: T;
   blockName?: T;
 }

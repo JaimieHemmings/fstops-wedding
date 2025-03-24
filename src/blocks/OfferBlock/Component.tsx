@@ -18,7 +18,6 @@ interface service {
 }
 
 const OfferBlock: React.FC<OfferBlockProps> = ({backgroundImage, title, subtitle, link, linkLabel, services}) => {
-  console.log(backgroundImage)
   return (
     <section className="bg-off-black offer-bg relative">
       <div className="absolute top-0 left-0 w-full h-full bg-jet/60">

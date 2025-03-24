@@ -10,6 +10,7 @@ import { MediaBlock } from '@/blocks/MediaBlock/Component'
 import BasicGridBlock from '@/blocks/BasicGrid/Component'
 import OfferBlock from '@/blocks/OfferBlock/Component'
 import BigTextBlock from '@/blocks/BigText/Component'
+import BigCta from './BigCta/Component'
 
 const blockComponents = {
   archive: ArchiveBlock,
@@ -20,6 +21,7 @@ const blockComponents = {
   bigTextBlock: BigTextBlock,
   basicGridBlock: BasicGridBlock,
   offerBlock: OfferBlock,
+  bigCta: BigCta,
 }
 
 export const RenderBlocks: React.FC<{
@@ -40,7 +42,7 @@ export const RenderBlocks: React.FC<{
 
             if (Block) {
               return (
-                <div className="my-16" key={index}>
+                <div key={index}>
                   {/* @ts-expect-error there may be some mismatch between the expected types here */}
                   <Block {...block} disableInnerContainer />
                 </div>

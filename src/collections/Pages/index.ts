@@ -11,6 +11,7 @@ import { OfferBlock } from '@/blocks/OfferBlock/config'
 import { hero } from '@/heros/config'
 import { slugField } from '@/fields/slug'
 import { BasicGridBlock } from '@/blocks/BasicGrid/config'
+import { BigCtaBlock } from '@/blocks/BigCta/config'
 import { populatePublishedAt } from '../../hooks/populatePublishedAt'
 import { generatePreviewPath } from '../../utilities/generatePreviewPath'
 import { revalidateDelete, revalidatePage } from './hooks/revalidatePage'
@@ -79,7 +80,7 @@ export const Pages: CollectionConfig<'pages'> = {
             {
               name: 'layout',
               type: 'blocks',
-              blocks: [CallToAction, Content, MediaBlock, Archive, FormBlock,BigTextBlock, BasicGridBlock, OfferBlock],
+              blocks: [CallToAction, Content, MediaBlock, Archive, FormBlock,BigTextBlock, BasicGridBlock, OfferBlock, BigCtaBlock],
               required: true,
               admin: {
                 initCollapsed: true,
