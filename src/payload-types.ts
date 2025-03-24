@@ -1755,6 +1755,9 @@ export interface Header {
  */
 export interface Footer {
   id: number;
+  introText?: string | null;
+  boldText?: string | null;
+  backgroundImage: number | Media;
   navItems?:
     | {
         link: {
@@ -1775,6 +1778,7 @@ export interface Footer {
         id?: string | null;
       }[]
     | null;
+  instagramLink?: string | null;
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -1806,6 +1810,9 @@ export interface HeaderSelect<T extends boolean = true> {
  * via the `definition` "footer_select".
  */
 export interface FooterSelect<T extends boolean = true> {
+  introText?: T;
+  boldText?: T;
+  backgroundImage?: T;
   navItems?:
     | T
     | {
@@ -1820,6 +1827,7 @@ export interface FooterSelect<T extends boolean = true> {
             };
         id?: T;
       };
+  instagramLink?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;

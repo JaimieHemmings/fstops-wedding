@@ -10,6 +10,24 @@ export const Footer: GlobalConfig = {
   },
   fields: [
     {
+      name: 'introText',
+      label: 'Intro Text',
+      type: 'text',
+
+    },
+    {
+      name: 'boldText',
+      label: 'Bold Text',
+      type: 'text',
+    },
+    {
+      name: 'backgroundImage',
+      label: 'Background Image',
+      type: 'upload',
+      relationTo: 'media',
+      required: true,
+    },    
+    {
       name: 'navItems',
       type: 'array',
       fields: [
@@ -24,6 +42,11 @@ export const Footer: GlobalConfig = {
           RowLabel: '@/Footer/RowLabel#RowLabel',
         },
       },
+    },
+    {
+      name: 'instagramLink',
+      label: 'Instagram Link',
+      type: 'text',
     },
   ],
   hooks: {
