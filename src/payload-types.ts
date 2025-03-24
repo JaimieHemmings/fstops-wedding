@@ -174,6 +174,7 @@ export interface Page {
     | BasicGridBlock
     | OfferBlock
     | BigCtablock
+    | Testimonials
   )[];
   meta?: {
     title?: string | null;
@@ -773,6 +774,15 @@ export interface BigCtablock {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "Testimonials".
+ */
+export interface Testimonials {
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'testimonials';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "reviews".
  */
 export interface Review {
@@ -1075,6 +1085,7 @@ export interface PagesSelect<T extends boolean = true> {
         basicGridBlock?: T | BasicGridBlockSelect<T>;
         offerBlock?: T | OfferBlockSelect<T>;
         bigCta?: T | BigCtablockSelect<T>;
+        testimonials?: T | TestimonialsSelect<T>;
       };
   meta?:
     | T
@@ -1228,6 +1239,14 @@ export interface BigCtablockSelect<T extends boolean = true> {
   title?: T;
   paragraph?: T;
   link?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "Testimonials_select".
+ */
+export interface TestimonialsSelect<T extends boolean = true> {
   id?: T;
   blockName?: T;
 }

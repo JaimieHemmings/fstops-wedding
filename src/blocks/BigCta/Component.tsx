@@ -11,7 +11,7 @@ interface BigCtaProps {
 
 const BigCta: React.FC<BigCtaProps> = ({ image, title, paragraph, link }) => {
   return (
-    <section className="w-full min-h-screen flex flex-col justify-center relative">
+    <section className="w-full min-h-screen flex flex-col justify-center relative py-[5rem]">
       <Media
         fill
         imgClassName="object-cover"
@@ -19,7 +19,7 @@ const BigCta: React.FC<BigCtaProps> = ({ image, title, paragraph, link }) => {
         resource={image}
       />
       <div className="absolute w-full h-full top-0 left-0 bg-jet/40" />
-      <div className="relative z-10 container md:w-[50vw] mx-auto flex flex-col justify-center">
+      <div className="relative z-10 container lg:w-[80vw] xl:w-[50vw] mx-auto flex flex-col justify-center">
         <h2 className="text-white inter text-3xl md:text-7xl font-bold max-md:text-center pb-5">
           {title}
         </h2>

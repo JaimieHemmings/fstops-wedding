@@ -29,6 +29,7 @@ export const Reviews: CollectionConfig = {
       name: 'quote',
       type: 'textarea',
       required: true,
+      maxLength: 130,
     },
     {
       name: 'name',

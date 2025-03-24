@@ -11,6 +11,7 @@ import BasicGridBlock from '@/blocks/BasicGrid/Component'
 import OfferBlock from '@/blocks/OfferBlock/Component'
 import BigTextBlock from '@/blocks/BigText/Component'
 import BigCta from './BigCta/Component'
+import Testimonials from './Testimonials/Component'
 
 const blockComponents = {
   archive: ArchiveBlock,
@@ -22,6 +23,7 @@ const blockComponents = {
   basicGridBlock: BasicGridBlock,
   offerBlock: OfferBlock,
   bigCta: BigCta,
+  testimonials: Testimonials,
 }
 
 export const RenderBlocks: React.FC<{
