@@ -176,6 +176,9 @@ export interface Page {
     | BigCtablock
     | Testimonials
     | AccordionBlock
+    | PageTitleBlock
+    | FullWidthTextBlock
+    | TwoColumnTextBlock
   )[];
   meta?: {
     title?: string | null;
@@ -806,6 +809,38 @@ export interface AccordionBlock {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "PageTitleBlock".
+ */
+export interface PageTitleBlock {
+  title: string;
+  text: string;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'pageTitleBlock';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "FullWidthTextBlock".
+ */
+export interface FullWidthTextBlock {
+  text: string;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'fullWidthTextBlock';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "TwoColumnTextBlock".
+ */
+export interface TwoColumnTextBlock {
+  textLeft: string;
+  textRight: string;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'twoColumnTextBlock';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "reviews".
  */
 export interface Review {
@@ -1110,6 +1145,9 @@ export interface PagesSelect<T extends boolean = true> {
         bigCta?: T | BigCtablockSelect<T>;
         testimonials?: T | TestimonialsSelect<T>;
         accordionBlock?: T | AccordionBlockSelect<T>;
+        pageTitleBlock?: T | PageTitleBlockSelect<T>;
+        fullWidthTextBlock?: T | FullWidthTextBlockSelect<T>;
+        twoColumnTextBlock?: T | TwoColumnTextBlockSelect<T>;
       };
   meta?:
     | T
@@ -1292,6 +1330,35 @@ export interface AccordionBlockSelect<T extends boolean = true> {
         answer?: T;
         id?: T;
       };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "PageTitleBlock_select".
+ */
+export interface PageTitleBlockSelect<T extends boolean = true> {
+  title?: T;
+  text?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "FullWidthTextBlock_select".
+ */
+export interface FullWidthTextBlockSelect<T extends boolean = true> {
+  text?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "TwoColumnTextBlock_select".
+ */
+export interface TwoColumnTextBlockSelect<T extends boolean = true> {
+  textLeft?: T;
+  textRight?: T;
   id?: T;
   blockName?: T;
 }

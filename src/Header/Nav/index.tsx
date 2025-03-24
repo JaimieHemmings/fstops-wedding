@@ -10,6 +10,9 @@ import Link from 'next/link'
 export const HeaderNav: React.FC<{ data: HeaderType }> = ({ data }) => {
   const navItems = data?.navItems || []
   const [isOpen, setOpen] = useState(false)
+  const handleNavClick = () => {
+    setOpen(false)
+  }
   return (
     <>
     <section className="w-full relative z-50 bg-white">
@@ -17,7 +20,7 @@ export const HeaderNav: React.FC<{ data: HeaderType }> = ({ data }) => {
         className="bg-cream/40 w-full z-20"
       >
         <div className="container flex flex-row items-center justify-between mx-auto p-3">
-          <div className="basis-1/2 md:basis-1/3">
+          <div className="basis-1/2 md:basis-1/3" onClick={handleNavClick}>
           <Link href="/" className="flex items-center space-x-3">
             <Image
               src="/logo.png"
@@ -46,7 +49,11 @@ export const HeaderNav: React.FC<{ data: HeaderType }> = ({ data }) => {
         </div>
         <div className="h-full md:basis-1/2 flex flex-col justify-center max-md:min-h-screen max-md:w-full">
           {navItems.map(({ link }, i) => {
-            return <CMSLink key={i} {...link} appearance="link" className="text-xl max-md:block text-center font-semibold hover:no-underline no-underline py-3" />
+            return (
+              <div key={i} onClick={handleNavClick} >
+                <CMSLink {...link} appearance="link" className="text-xl max-md:block text-center font-semibold hover:no-underline no-underline py-3" />
+              </div>
+            )
           })}
         </div>
       </div>
