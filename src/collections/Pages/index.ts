@@ -9,6 +9,7 @@ import { FormBlock } from '../../blocks/Form/config'
 import { MediaBlock } from '../../blocks/MediaBlock/config'
 import { OfferBlock } from '@/blocks/OfferBlock/config'
 import { Testimonials } from '@/blocks/Testimonials/config'
+import { AccordionBlock } from '@/blocks/AccordionBlock/config'
 import { hero } from '@/heros/config'
 import { slugField } from '@/fields/slug'
 import { BasicGridBlock } from '@/blocks/BasicGrid/config'
@@ -81,7 +82,7 @@ export const Pages: CollectionConfig<'pages'> = {
             {
               name: 'layout',
               type: 'blocks',
-              blocks: [CallToAction, Content, MediaBlock, Archive, FormBlock,BigTextBlock, BasicGridBlock, OfferBlock, BigCtaBlock, Testimonials],
+              blocks: [CallToAction, Content, MediaBlock, Archive, FormBlock,BigTextBlock, BasicGridBlock, OfferBlock, BigCtaBlock, Testimonials, AccordionBlock],
               required: true,
               admin: {
                 initCollapsed: true,

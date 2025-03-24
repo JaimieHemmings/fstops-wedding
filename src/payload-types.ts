@@ -175,6 +175,7 @@ export interface Page {
     | OfferBlock
     | BigCtablock
     | Testimonials
+    | AccordionBlock
   )[];
   meta?: {
     title?: string | null;
@@ -783,6 +784,28 @@ export interface Testimonials {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "AccordionBlock".
+ */
+export interface AccordionBlock {
+  image?: (number | null) | Media;
+  title?: string | null;
+  content?: string | null;
+  link?: (number | null) | Page;
+  linkLabel?: string | null;
+  questionsTitle?: string | null;
+  questions?:
+    | {
+        question?: string | null;
+        answer?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'accordionBlock';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "reviews".
  */
 export interface Review {
@@ -1086,6 +1109,7 @@ export interface PagesSelect<T extends boolean = true> {
         offerBlock?: T | OfferBlockSelect<T>;
         bigCta?: T | BigCtablockSelect<T>;
         testimonials?: T | TestimonialsSelect<T>;
+        accordionBlock?: T | AccordionBlockSelect<T>;
       };
   meta?:
     | T
@@ -1247,6 +1271,27 @@ export interface BigCtablockSelect<T extends boolean = true> {
  * via the `definition` "Testimonials_select".
  */
 export interface TestimonialsSelect<T extends boolean = true> {
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "AccordionBlock_select".
+ */
+export interface AccordionBlockSelect<T extends boolean = true> {
+  image?: T;
+  title?: T;
+  content?: T;
+  link?: T;
+  linkLabel?: T;
+  questionsTitle?: T;
+  questions?:
+    | T
+    | {
+        question?: T;
+        answer?: T;
+        id?: T;
+      };
   id?: T;
   blockName?: T;
 }

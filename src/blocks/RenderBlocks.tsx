@@ -12,6 +12,7 @@ import OfferBlock from '@/blocks/OfferBlock/Component'
 import BigTextBlock from '@/blocks/BigText/Component'
 import BigCta from './BigCta/Component'
 import Testimonials from './Testimonials/Component'
+import AccordionBlock from './AccordionBlock/Component'
 
 const blockComponents = {
   archive: ArchiveBlock,
@@ -24,6 +25,7 @@ const blockComponents = {
   offerBlock: OfferBlock,
   bigCta: BigCta,
   testimonials: Testimonials,
+  accordionBlock: AccordionBlock,
 }
 
 export const RenderBlocks: React.FC<{
