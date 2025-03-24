@@ -66,9 +66,9 @@ const OfferBlock: React.FC<OfferBlockProps> = ({backgroundImage, title, subtitle
           <div className="basis-1/2 flex flex-col bl-white bb-white p-5 justify-around">
             <div className="flex-col md:flex-row flex-wrap flex justify-around">
               
-              <div className="basis-1/2 flex flex-col border-l-[1px] border-r-[1px] border-white/20 py-10 max-md:hidden">
+              <div className="basis-1/2 flex flex-col border-l-[1px] border-white/20 py-10 max-md:hidden">
               </div>
-              <div className="basis-1/2" />
+              <div className="basis-1/2 max-md:hidden border-l-[1px] border-white/20" />
               {services.map((service, i) => {
                 return (
                   <React.Fragment key={i}>
