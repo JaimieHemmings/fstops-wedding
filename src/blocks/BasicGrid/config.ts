@@ -16,9 +16,16 @@ export const BasicGridBlock: Block = {
       relationTo: 'media',
     },
     {
+      name: 'learnMoreLink',
+      relationTo: 'pages',
+      type: 'relationship',
+      required: true,
+    },
+    {
       name: 'ctaImage',
       type: 'upload',
       relationTo: 'media',
+      required: true,
 
     },
     {
@@ -30,6 +37,12 @@ export const BasicGridBlock: Block = {
     {
       name: 'ctaText',
       type: 'textarea',
+      required: true,
+    },
+    {
+      name: 'ctaLink',
+      relationTo: 'pages',
+      type: 'relationship',
       required: true,
     },
   ],

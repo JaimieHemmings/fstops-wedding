@@ -1,6 +1,8 @@
 import { Media } from '@/components/Media'
 import Link from 'next/link'
 import React from 'react'
+import { FaArrowCircleUp } from "react-icons/fa";
+import SingleReview from './Components/SingleReview';
 
 interface BasicGridBlockProps {
   intro: string
@@ -8,18 +10,26 @@ interface BasicGridBlockProps {
   ctaTitle: string
   ctaText: string
   ctaImage: any
+  ctaLink: {
+    slug: string
+    title: string
+  }
+  learnMoreLink: {
+    slug: string
+    title: string
+  }
 }
 
-const BasicGridBlock: React.FC<BasicGridBlockProps> = ({intro, featuredImage, ctaTitle, ctaText, ctaImage}) => {
+const BasicGridBlock: React.FC<BasicGridBlockProps> = ({intro, featuredImage, ctaTitle, ctaText, ctaImage, ctaLink, learnMoreLink}) => {
   return (
     <section className="block md:flex flex-row container mx-auto md:gap-20 pt-5 py-[5rem]">
       <div className="block md:flex gap-4 flex-col justify-between md:w-2/3">
-        <div className="block lg:flex flex-row justify-between gap-4 md:gap-16 pb-5">
-          <h2 className="opacity-[0.6] px-3 font-medium inter text-xl basis-1/2 aos-init aos-animate">
+        <div className="block lg:flex flex-row justify-between gap-2 md:gap-2 pb-5">
+          <h2 className="opacity-[0.6] px-3 font-medium inter text-xl basis-1/2">
             {intro}
           </h2>
           <div className=" basis-1/2 max-lg:py-[5rem] p-3 align-baseline max-md:pt-5 flex flex-row justify-between">
-          
+            <SingleReview />
           </div>
         </div>
         <div className="relative h-auto min-h-[500px]">
@@ -42,13 +52,18 @@ const BasicGridBlock: React.FC<BasicGridBlockProps> = ({intro, featuredImage, ct
           <h3 className="text-xl inter font-semibold pb-3">
             {ctaTitle}
           </h3>
-          <p className="opacity-[0.6]">
+          <p className="opacity-[0.6] pb-10">
             {ctaText}
           </p>
+          <Link href={`/${ctaLink.slug}`}>
+            <FaArrowCircleUp
+              className="rotate-45 absolute right-5 bottom-5 text-jet w-10 h-10 transition-all duration-300 ease-in-out hover:rotate-0"
+            />
+          </Link>
         </div>
         <Link 
           className="group font-semibold text-xl relative mt-5 border-b-2 border-jet pb-2 inline-flex items-center" 
-          href="/"
+          href={`/${learnMoreLink.slug}`}
         >
           Learn More
           <svg

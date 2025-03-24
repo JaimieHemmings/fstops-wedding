@@ -72,6 +72,7 @@ export interface Config {
     media: Media;
     categories: Category;
     users: User;
+    reviews: Review;
     redirects: Redirect;
     forms: Form;
     'form-submissions': FormSubmission;
@@ -88,6 +89,7 @@ export interface Config {
     media: MediaSelect<false> | MediaSelect<true>;
     categories: CategoriesSelect<false> | CategoriesSelect<true>;
     users: UsersSelect<false> | UsersSelect<true>;
+    reviews: ReviewsSelect<false> | ReviewsSelect<true>;
     redirects: RedirectsSelect<false> | RedirectsSelect<true>;
     forms: FormsSelect<false> | FormsSelect<true>;
     'form-submissions': FormSubmissionsSelect<false> | FormSubmissionsSelect<true>;
@@ -715,12 +717,26 @@ export interface BigTextblock {
 export interface BasicGridBlock {
   intro: string;
   featuredImage: number | Media;
-  ctaImage?: (number | null) | Media;
+  learnMoreLink: number | Page;
+  ctaImage: number | Media;
   ctaTitle: string;
   ctaText: string;
+  ctaLink: number | Page;
   id?: string | null;
   blockName?: string | null;
   blockType: 'basicGridBlock';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "reviews".
+ */
+export interface Review {
+  id: number;
+  profileImage: number | Media;
+  quote: string;
+  name: string;
+  updatedAt: string;
+  createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -913,6 +929,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'users';
         value: number | User;
+      } | null)
+    | ({
+        relationTo: 'reviews';
+        value: number | Review;
       } | null)
     | ({
         relationTo: 'redirects';
@@ -1123,9 +1143,11 @@ export interface BigTextblockSelect<T extends boolean = true> {
 export interface BasicGridBlockSelect<T extends boolean = true> {
   intro?: T;
   featuredImage?: T;
+  learnMoreLink?: T;
   ctaImage?: T;
   ctaTitle?: T;
   ctaText?: T;
+  ctaLink?: T;
   id?: T;
   blockName?: T;
 }
@@ -1288,6 +1310,17 @@ export interface UsersSelect<T extends boolean = true> {
   hash?: T;
   loginAttempts?: T;
   lockUntil?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "reviews_select".
+ */
+export interface ReviewsSelect<T extends boolean = true> {
+  profileImage?: T;
+  quote?: T;
+  name?: T;
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
