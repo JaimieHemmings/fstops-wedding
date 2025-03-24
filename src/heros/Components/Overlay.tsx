@@ -16,9 +16,9 @@ const Overlay:React.FC<OverlayProps> = ({title, subtitle, highlightText}) => {
       <h2 className="font-semibold text-xl md:text-2xl leading-4 mb-4 text-white">
         {title}
       </h2>
-      <p className="text-5xl md:text-8xl text-white mb-[3rem] leading-[0.8] font-bold mt-1 uppercase">
-        {subtitle}      
-        <span className="playfair-display text-4xl md:text-6xl mt-1 block italic text-gold">
+      <p className="text-5xl md:text-8xl text-white mb-[3rem] leading-[0.8] font-bold mt-1">
+        <span className="uppercase">{subtitle}</span>
+        <span className="playfair text-4xl md:text-6xl mt-1 block italic text-gold">
           {highlightText}
         </span>
       </p>
