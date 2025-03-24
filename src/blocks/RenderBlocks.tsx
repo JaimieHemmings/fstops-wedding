@@ -16,6 +16,7 @@ import AccordionBlock from '@/blocks/AccordionBlock/Component'
 import PageTitleBlock from '@/blocks/PageTitle/Component'
 import FullWidthTextBlock from '@/blocks/FullWidthText/Component'
 import TwoColumnTextBlock from '@/blocks/TwoColumnTextBlock/Component'
+import FullWidthImageBlock from '@/blocks/FullWidthImage/Component'
 
 const blockComponents = {
   archive: ArchiveBlock,
@@ -31,7 +32,8 @@ const blockComponents = {
   accordionBlock: AccordionBlock,
   pageTitleBlock: PageTitleBlock,
   fullWidthTextBlock: FullWidthTextBlock,
-  twoColumnTextBlock: TwoColumnTextBlock
+  twoColumnTextBlock: TwoColumnTextBlock,
+  fullWidthImageBlock: FullWidthImageBlock,
 }
 
 export const RenderBlocks: React.FC<{

@@ -179,6 +179,7 @@ export interface Page {
     | PageTitleBlock
     | FullWidthTextBlock
     | TwoColumnTextBlock
+    | FullWidthImageBlock
   )[];
   meta?: {
     title?: string | null;
@@ -841,6 +842,16 @@ export interface TwoColumnTextBlock {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "FullWidthImageBlock".
+ */
+export interface FullWidthImageBlock {
+  image: number | Media;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'fullWidthImageBlock';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "reviews".
  */
 export interface Review {
@@ -1148,6 +1159,7 @@ export interface PagesSelect<T extends boolean = true> {
         pageTitleBlock?: T | PageTitleBlockSelect<T>;
         fullWidthTextBlock?: T | FullWidthTextBlockSelect<T>;
         twoColumnTextBlock?: T | TwoColumnTextBlockSelect<T>;
+        fullWidthImageBlock?: T | FullWidthImageBlockSelect<T>;
       };
   meta?:
     | T
@@ -1359,6 +1371,15 @@ export interface FullWidthTextBlockSelect<T extends boolean = true> {
 export interface TwoColumnTextBlockSelect<T extends boolean = true> {
   textLeft?: T;
   textRight?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "FullWidthImageBlock_select".
+ */
+export interface FullWidthImageBlockSelect<T extends boolean = true> {
+  image?: T;
   id?: T;
   blockName?: T;
 }

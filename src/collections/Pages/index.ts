@@ -22,6 +22,7 @@ import { PageTitleBlock } from '@/blocks/PageTitle/config'
 import { BigTextBlock } from '@/blocks/BigText/config'
 import { FullWidthTextBlock } from '@/blocks/FullWidthText/config'
 import { TwoColumnTextBlock } from '@/blocks/TwoColumnTextBlock/config'
+import { FullWidthImageBlock } from '@/blocks/FullWidthImage/config'
 
 import {
   MetaDescriptionField,
@@ -85,7 +86,7 @@ export const Pages: CollectionConfig<'pages'> = {
             {
               name: 'layout',
               type: 'blocks',
-              blocks: [CallToAction, Content, MediaBlock, Archive, FormBlock,BigTextBlock, BasicGridBlock, OfferBlock, BigCtaBlock, Testimonials, AccordionBlock, PageTitleBlock, FullWidthTextBlock, TwoColumnTextBlock],
+              blocks: [CallToAction, Content, MediaBlock, Archive, FormBlock,BigTextBlock, BasicGridBlock, OfferBlock, BigCtaBlock, Testimonials, AccordionBlock, PageTitleBlock, FullWidthTextBlock, TwoColumnTextBlock, FullWidthImageBlock],
               required: true,
               admin: {
                 initCollapsed: true,
