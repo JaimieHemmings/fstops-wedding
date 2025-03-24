@@ -63,7 +63,7 @@ const config = {
           DEFAULT: '#111112',
         },
         cream: {
-          DEFAULT: '#f1f1f1',
+          DEFAULT: '#f9f5e9',
         },
         accent: {
           DEFAULT: 'hsl(var(--accent))',
