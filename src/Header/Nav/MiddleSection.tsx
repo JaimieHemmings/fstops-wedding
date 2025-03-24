@@ -14,8 +14,8 @@ const MiddleSection = () => {
           </a>
         </p>
         <p className="font-semibold text-sm">
-          <a href="/cdn-cgi/l/email-protection#9cf4f9f0f0f3dcfaefe8f3ecefb2fff3b2e9f7" className="transition-all inter">
-            <span className="__cf_email__" data-cfemail="69010c050506290f1a1d06191a470a06471c02">[email&#160;protected]</span>
+          <a href="mailto:hello@fstops.co.uk" className="transition-all">
+              hello@fstops.co.uk
           </a>
         </p>
       </div>
