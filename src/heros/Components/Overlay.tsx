@@ -11,8 +11,8 @@ interface OverlayProps {
 const Overlay:React.FC<OverlayProps> = ({title, subtitle, highlightText}) => {
   return (
     <div className="content bg-[#111111]/40 absolute z-20 w-full top-0 left-0 text-center h-full flex flex-col justify-end py-5 pointer-events-none">
-      <CrossHair />
-      <CornerBorders />
+      {/* <CrossHair />
+      <CornerBorders /> */}
       <h2 className="font-semibold text-xl md:text-2xl leading-4 mb-4 text-white">
         {title}
       </h2>
