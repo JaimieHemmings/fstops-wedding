@@ -5,6 +5,7 @@ import { CMSLink } from '@/components/Link'
 import MiddleSection from './MiddleSection'
 import Image from 'next/image'
 import Hamburger from 'hamburger-react'
+import Link from 'next/link'
 
 export const HeaderNav: React.FC<{ data: HeaderType }> = ({ data }) => {
   const navItems = data?.navItems || []
@@ -16,15 +17,15 @@ export const HeaderNav: React.FC<{ data: HeaderType }> = ({ data }) => {
         className="w-full flex flex-row items-center justify-between mx-auto p-4 z-20"
       >
         <div className="basis-1/2 md:basis-1/3">
-          <a href="/" className="flex items-center space-x-3">
-            <Image
-              src="/logo.png"
-              alt="FStops Photography"
-              width={700}
-              height={150}
-              className="w-full h-auto"
-              />
-          </a>
+        <Link href="/" className="flex items-center space-x-3">
+          <Image
+            src="/logo.png"
+            alt="FStops Photography"
+            width={700}
+            height={150}
+            className="w-full h-auto"
+          />
+        </Link>
         </div>
         <div className="max-md:hidden basis-1/3">
           <MiddleSection />
