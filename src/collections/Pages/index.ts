@@ -17,12 +17,7 @@ import { BigCtaBlock } from '@/blocks/BigCta/config'
 import { populatePublishedAt } from '../../hooks/populatePublishedAt'
 import { generatePreviewPath } from '../../utilities/generatePreviewPath'
 import { revalidateDelete, revalidatePage } from './hooks/revalidatePage'
-import { PageTitleBlock } from '@/blocks/PageTitle/config'
-
 import { BigTextBlock } from '@/blocks/BigText/config'
-import { FullWidthTextBlock } from '@/blocks/FullWidthText/config'
-import { TwoColumnTextBlock } from '@/blocks/TwoColumnTextBlock/config'
-import { FullWidthImageBlock } from '@/blocks/FullWidthImage/config'
 import { ContainerBlock } from '@/blocks/ContainerBlock/config'
 import {
   MetaDescriptionField,
@@ -86,7 +81,7 @@ export const Pages: CollectionConfig<'pages'> = {
             {
               name: 'layout',
               type: 'blocks',
-              blocks: [CallToAction, Content, MediaBlock, Archive, FormBlock,BigTextBlock, BasicGridBlock, OfferBlock, BigCtaBlock, Testimonials, AccordionBlock, PageTitleBlock, FullWidthTextBlock, TwoColumnTextBlock, FullWidthImageBlock,ContainerBlock],
+              blocks: [CallToAction, Content, MediaBlock, Archive, FormBlock,BigTextBlock, BasicGridBlock, OfferBlock, BigCtaBlock, Testimonials, AccordionBlock, ContainerBlock],
               required: true,
               admin: {
                 initCollapsed: true,
