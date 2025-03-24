@@ -17,6 +17,7 @@ import PageTitleBlock from '@/blocks/PageTitle/Component'
 import FullWidthTextBlock from '@/blocks/FullWidthText/Component'
 import TwoColumnTextBlock from '@/blocks/TwoColumnTextBlock/Component'
 import FullWidthImageBlock from '@/blocks/FullWidthImage/Component'
+import ContainerBlock from '@/blocks/ContainerBlock/Component'
 
 const blockComponents = {
   archive: ArchiveBlock,
@@ -34,6 +35,7 @@ const blockComponents = {
   fullWidthTextBlock: FullWidthTextBlock,
   twoColumnTextBlock: TwoColumnTextBlock,
   fullWidthImageBlock: FullWidthImageBlock,
+  containerBlock: ContainerBlock,
 }
 
 export const RenderBlocks: React.FC<{

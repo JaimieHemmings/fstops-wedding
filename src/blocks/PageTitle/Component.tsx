@@ -7,7 +7,7 @@ interface PageTitleBlockProps {
 
 const PageTitleBlock: React.FC<PageTitleBlockProps> = ({ title, text}) => {
   return (
-    <section className="py-[3rem] flex flex-col md:flex-row p-3 pt-[5rem]">
+    <section className="flex flex-col md:flex-row pb-[3rem]">
       <div className="container">
         <h1 className="font-bold text-7xl pb-[3rem]">
           {title}

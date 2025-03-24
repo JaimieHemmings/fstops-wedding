@@ -180,6 +180,7 @@ export interface Page {
     | FullWidthTextBlock
     | TwoColumnTextBlock
     | FullWidthImageBlock
+    | ContainerBlock
   )[];
   meta?: {
     title?: string | null;
@@ -813,8 +814,8 @@ export interface AccordionBlock {
  * via the `definition` "PageTitleBlock".
  */
 export interface PageTitleBlock {
-  title: string;
-  text: string;
+  title?: string | null;
+  text?: string | null;
   id?: string | null;
   blockName?: string | null;
   blockType: 'pageTitleBlock';
@@ -849,6 +850,21 @@ export interface FullWidthImageBlock {
   id?: string | null;
   blockName?: string | null;
   blockType: 'fullWidthImageBlock';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ContainerBlock".
+ */
+export interface ContainerBlock {
+  image: number | Media;
+  title: string;
+  subtitle: string;
+  link?: (number | null) | Page;
+  linkLabel: string;
+  blocks: (PageTitleBlock | FullWidthImageBlock | TwoColumnTextBlock | FullWidthTextBlock)[];
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'containerBlock';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1160,6 +1176,7 @@ export interface PagesSelect<T extends boolean = true> {
         fullWidthTextBlock?: T | FullWidthTextBlockSelect<T>;
         twoColumnTextBlock?: T | TwoColumnTextBlockSelect<T>;
         fullWidthImageBlock?: T | FullWidthImageBlockSelect<T>;
+        containerBlock?: T | ContainerBlockSelect<T>;
       };
   meta?:
     | T
@@ -1380,6 +1397,27 @@ export interface TwoColumnTextBlockSelect<T extends boolean = true> {
  */
 export interface FullWidthImageBlockSelect<T extends boolean = true> {
   image?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ContainerBlock_select".
+ */
+export interface ContainerBlockSelect<T extends boolean = true> {
+  image?: T;
+  title?: T;
+  subtitle?: T;
+  link?: T;
+  linkLabel?: T;
+  blocks?:
+    | T
+    | {
+        pageTitleBlock?: T | PageTitleBlockSelect<T>;
+        fullWidthImageBlock?: T | FullWidthImageBlockSelect<T>;
+        twoColumnTextBlock?: T | TwoColumnTextBlockSelect<T>;
+        fullWidthTextBlock?: T | FullWidthTextBlockSelect<T>;
+      };
   id?: T;
   blockName?: T;
 }
