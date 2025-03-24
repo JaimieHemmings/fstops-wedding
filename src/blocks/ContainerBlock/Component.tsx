@@ -45,7 +45,7 @@ const ContainerBlock: React.FC<ContainerBlockProps> = ({title, image, subtitle, 
           </div>
           <div className="py-5">
           <Link 
-          className="group font-semibold text-xl relative mt-5 border-b-2 border-jet pb-2 inline-flex items-center" 
+          className="group font-semibold text-base relative mt-5 border-b-2 border-jet pb-2 inline-flex items-center" 
           href={`/${link.slug}`}
         >
           {linkLabel}
