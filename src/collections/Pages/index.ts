@@ -7,6 +7,7 @@ import { CallToAction } from '../../blocks/CallToAction/config'
 import { Content } from '../../blocks/Content/config'
 import { FormBlock } from '../../blocks/Form/config'
 import { MediaBlock } from '../../blocks/MediaBlock/config'
+import { OfferBlock } from '@/blocks/OfferBlock/config'
 import { hero } from '@/heros/config'
 import { slugField } from '@/fields/slug'
 import { BasicGridBlock } from '@/blocks/BasicGrid/config'
@@ -78,7 +79,7 @@ export const Pages: CollectionConfig<'pages'> = {
             {
               name: 'layout',
               type: 'blocks',
-              blocks: [CallToAction, Content, MediaBlock, Archive, FormBlock,BigTextBlock, BasicGridBlock],
+              blocks: [CallToAction, Content, MediaBlock, Archive, FormBlock,BigTextBlock, BasicGridBlock, OfferBlock],
               required: true,
               admin: {
                 initCollapsed: true,

@@ -8,7 +8,7 @@ import { ContentBlock } from '@/blocks/Content/Component'
 import { FormBlock } from '@/blocks/Form/Component'
 import { MediaBlock } from '@/blocks/MediaBlock/Component'
 import BasicGridBlock from '@/blocks/BasicGrid/Component'
-
+import OfferBlock from '@/blocks/OfferBlock/Component'
 import BigTextBlock from '@/blocks/BigText/Component'
 
 const blockComponents = {
@@ -19,6 +19,7 @@ const blockComponents = {
   mediaBlock: MediaBlock,
   bigTextBlock: BigTextBlock,
   basicGridBlock: BasicGridBlock,
+  offerBlock: OfferBlock,
 }
 
 export const RenderBlocks: React.FC<{

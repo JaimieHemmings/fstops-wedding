@@ -164,7 +164,16 @@ export interface Page {
     video?: (number | null) | Media;
     media?: (number | null) | Media;
   };
-  layout: (CallToActionBlock | ContentBlock | MediaBlock | ArchiveBlock | FormBlock | BigTextblock | BasicGridBlock)[];
+  layout: (
+    | CallToActionBlock
+    | ContentBlock
+    | MediaBlock
+    | ArchiveBlock
+    | FormBlock
+    | BigTextblock
+    | BasicGridBlock
+    | OfferBlock
+  )[];
   meta?: {
     title?: string | null;
     /**
@@ -728,6 +737,28 @@ export interface BasicGridBlock {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "OfferBlock".
+ */
+export interface OfferBlock {
+  backgroundImage?: (number | null) | Media;
+  title: string;
+  subtitle: string;
+  link: number | Page;
+  linkLabel?: string | null;
+  services?:
+    | {
+        service: string;
+        shortDescription: string;
+        icon: number | Media;
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'offerBlock';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "reviews".
  */
 export interface Review {
@@ -1028,6 +1059,7 @@ export interface PagesSelect<T extends boolean = true> {
         formBlock?: T | FormBlockSelect<T>;
         bigTextBlock?: T | BigTextblockSelect<T>;
         basicGridBlock?: T | BasicGridBlockSelect<T>;
+        offerBlock?: T | OfferBlockSelect<T>;
       };
   meta?:
     | T
@@ -1148,6 +1180,27 @@ export interface BasicGridBlockSelect<T extends boolean = true> {
   ctaTitle?: T;
   ctaText?: T;
   ctaLink?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "OfferBlock_select".
+ */
+export interface OfferBlockSelect<T extends boolean = true> {
+  backgroundImage?: T;
+  title?: T;
+  subtitle?: T;
+  link?: T;
+  linkLabel?: T;
+  services?:
+    | T
+    | {
+        service?: T;
+        shortDescription?: T;
+        icon?: T;
+        id?: T;
+      };
   id?: T;
   blockName?: T;
 }
