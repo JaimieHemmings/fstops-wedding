@@ -12,27 +12,29 @@ export const HeaderNav: React.FC<{ data: HeaderType }> = ({ data }) => {
   const [isOpen, setOpen] = useState(false)
   return (
     <>
-    <section className="w-full relative z-50 p-1 pt-3 px-5 bg-white">
+    <section className="w-full relative z-50 bg-white">
       <div
-        className="bg-cream/40 w-full flex flex-row items-center justify-between mx-auto p-4 z-20"
+        className="bg-cream/40 w-full z-20"
       >
-        <div className="basis-1/2 md:basis-1/3">
-        <Link href="/" className="flex items-center space-x-3">
-          <Image
-            src="/logo.png"
-            alt="FStops Photography"
-            width={700}
-            height={150}
-            className="w-full h-auto"
-          />
-        </Link>
-        </div>
-        <div className="max-md:hidden basis-1/3">
-          <MiddleSection />
-        </div>
-        <div className="basis-1/2 md:basis-1/3">
-          <div className="w-auto flex justify-end">
-            <Hamburger toggled={isOpen} toggle={setOpen} />
+        <div className="container flex flex-row items-center justify-between mx-auto p-3">
+          <div className="basis-1/2 md:basis-1/3">
+          <Link href="/" className="flex items-center space-x-3">
+            <Image
+              src="/logo.png"
+              alt="FStops Photography"
+              width={300}
+              height={150}
+              className="max-w-full h-auto"
+            />
+          </Link>
+          </div>
+          <div className="max-md:hidden basis-1/3">
+            <MiddleSection />
+          </div>
+          <div className="basis-1/2 md:basis-1/3">
+            <div className="w-auto flex justify-end">
+              <Hamburger toggled={isOpen} toggle={setOpen} />
+            </div>
           </div>
         </div>
       </div>
