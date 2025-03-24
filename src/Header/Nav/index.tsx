@@ -14,7 +14,7 @@ export const HeaderNav: React.FC<{ data: HeaderType }> = ({ data }) => {
     <>
     <section className="w-full relative z-50 p-1 pt-3 px-5 bg-white">
       <div
-        className="w-full flex flex-row items-center justify-between mx-auto p-4 z-20"
+        className="bg-cream/40 w-full flex flex-row items-center justify-between mx-auto p-4 z-20"
       >
         <div className="basis-1/2 md:basis-1/3">
         <Link href="/" className="flex items-center space-x-3">

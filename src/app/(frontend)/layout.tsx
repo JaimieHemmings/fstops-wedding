@@ -23,7 +23,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <link href="/favicon.ico" rel="icon" sizes="32x32" />
         <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
       </head>
-      <body className="bg-cream text-jet">
+      <body className="bg-cream/40 text-jet">
         <Providers>
 
           <Header />
