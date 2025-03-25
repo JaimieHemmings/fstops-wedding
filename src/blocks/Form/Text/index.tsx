@@ -25,7 +25,8 @@ export const Text: React.FC<
           </span>
         )}
       </Label>
-      <Input defaultValue={defaultValue} id={name} type="text" {...register(name, { required })} />
+      <Input 
+        className="bg-[#f5f5f5] p-2 w-full border-none" placeholder={defaultValue} id={name} type="text" {...register(name, { required })} />
       {errors[name] && <Error name={name} />}
     </Width>
   )

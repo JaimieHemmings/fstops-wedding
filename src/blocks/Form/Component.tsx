@@ -114,11 +114,11 @@ export const FormBlock: React.FC<
   )
 
   return (
-    <div className="container lg:max-w-[48rem]">
+    <div className="container text-jet">
       {enableIntro && introContent && !hasSubmitted && (
-        <RichText className="mb-8 lg:mb-12" data={introContent} enableGutter={false} />
+        <RichText className="py-[5rem] text-jet" data={introContent} enableGutter={false} />
       )}
-      <div className="p-4 lg:p-6 border border-border rounded-[0.8rem]">
+      <div className="p-4 lg:p-6 bg-white rounded-2xl mb-[5rem]">
         <FormProvider {...formMethods}>
           {!isLoading && hasSubmitted && confirmationType === 'message' && (
             <RichText data={confirmationMessage} />
@@ -150,10 +150,14 @@ export const FormBlock: React.FC<
                     return null
                   })}
               </div>
-
-              <Button form={formID} type="submit" variant="default">
-                {submitButtonLabel}
-              </Button>
+              <div className="flex flex-row justify-end">
+                <button
+                  form={formID}
+                  type="submit"
+                  className="bg-[#111112] text-white rounded-lg px-10 py-3 font-semibold text-xl mt-[3rem]">
+                  {submitButtonLabel}
+                </button>
+              </div>
             </form>
           )}
         </FormProvider>

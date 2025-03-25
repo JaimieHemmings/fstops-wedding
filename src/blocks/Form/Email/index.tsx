@@ -26,8 +26,9 @@ export const Email: React.FC<
         )}
       </Label>
       <Input
-        defaultValue={defaultValue}
+        placeholder="Enter your email"
         id={name}
+        className="bg-[#f5f5f5] p-2 w-full border-none"
         type="text"
         {...register(name, { pattern: /^\S[^\s@]*@\S+$/, required })}
       />

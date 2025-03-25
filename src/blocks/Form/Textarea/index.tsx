@@ -28,9 +28,10 @@ export const Textarea: React.FC<
       </Label>
 
       <TextAreaComponent
-        defaultValue={defaultValue}
+        placeholder={defaultValue}
         id={name}
         rows={rows}
+        className="bg-[#f5f5f5] p-2 w-full border-none"
         {...register(name, { required: required })}
       />
 
