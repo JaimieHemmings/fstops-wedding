@@ -51,7 +51,7 @@ export const HeaderNav: React.FC<{ data: HeaderType }> = ({ data }) => {
           {navItems.map(({ link }, i) => {
             return (
               <div key={i} onClick={handleNavClick} >
-                <CMSLink {...link} appearance="link" className="text-xl max-md:block text-center font-semibold hover:no-underline no-underline py-3" />
+                <CMSLink {...link} appearance="link" className="text-xl max-md:block text-center font-semibold hover:no-underline no-underline py-3 text-white" />
               </div>
             )
           })}
