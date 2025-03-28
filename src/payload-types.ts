@@ -810,12 +810,7 @@ export interface AccordionBlock {
  * via the `definition` "ContainerBlock".
  */
 export interface ContainerBlock {
-  image: number | Media;
-  title: string;
-  subtitle: string;
-  link?: (number | null) | Page;
-  linkLabel: string;
-  blocks: (PageTitleBlock | FullWidthImageBlock | TwoColumnTextBlock | FullWidthTextBlock)[];
+  blocks?: (PageTitleBlock | FullWidthImageBlock | TwoColumnTextBlock | FullWidthTextBlock)[] | null;
   id?: string | null;
   blockName?: string | null;
   blockType: 'containerBlock';
@@ -825,8 +820,8 @@ export interface ContainerBlock {
  * via the `definition` "PageTitleBlock".
  */
 export interface PageTitleBlock {
-  title?: string | null;
-  text?: string | null;
+  title: string;
+  text: string;
   id?: string | null;
   blockName?: string | null;
   blockType: 'pageTitleBlock';
@@ -1359,11 +1354,6 @@ export interface AccordionBlockSelect<T extends boolean = true> {
  * via the `definition` "ContainerBlock_select".
  */
 export interface ContainerBlockSelect<T extends boolean = true> {
-  image?: T;
-  title?: T;
-  subtitle?: T;
-  link?: T;
-  linkLabel?: T;
   blocks?:
     | T
     | {
