@@ -69,6 +69,7 @@ export interface Config {
   collections: {
     pages: Page;
     posts: Post;
+    portfolioItem: PortfolioItem;
     media: Media;
     categories: Category;
     users: User;
@@ -86,6 +87,7 @@ export interface Config {
   collectionsSelect: {
     pages: PagesSelect<false> | PagesSelect<true>;
     posts: PostsSelect<false> | PostsSelect<true>;
+    portfolioItem: PortfolioItemSelect<false> | PortfolioItemSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     categories: CategoriesSelect<false> | CategoriesSelect<true>;
     users: UsersSelect<false> | UsersSelect<true>;
@@ -864,6 +866,58 @@ export interface FullWidthTextBlock {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "portfolioItem".
+ */
+export interface PortfolioItem {
+  id: number;
+  title: string;
+  heroImage?: (number | null) | Media;
+  content: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  media?: {
+    imagesLeft?:
+      | {
+          media: number | Media;
+          id?: string | null;
+        }[]
+      | null;
+    imagesRight?:
+      | {
+          media: number | Media;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  meta?: {
+    title?: string | null;
+    /**
+     * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
+     */
+    image?: (number | null) | Media;
+    description?: string | null;
+  };
+  publishedAt?: string | null;
+  slug?: string | null;
+  slugLock?: boolean | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "reviews".
  */
 export interface Review {
@@ -1053,6 +1107,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'posts';
         value: number | Post;
+      } | null)
+    | ({
+        relationTo: 'portfolioItem';
+        value: number | PortfolioItem;
       } | null)
     | ({
         relationTo: 'media';
@@ -1438,6 +1496,44 @@ export interface PostsSelect<T extends boolean = true> {
         id?: T;
         name?: T;
       };
+  slug?: T;
+  slugLock?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "portfolioItem_select".
+ */
+export interface PortfolioItemSelect<T extends boolean = true> {
+  title?: T;
+  heroImage?: T;
+  content?: T;
+  media?:
+    | T
+    | {
+        imagesLeft?:
+          | T
+          | {
+              media?: T;
+              id?: T;
+            };
+        imagesRight?:
+          | T
+          | {
+              media?: T;
+              id?: T;
+            };
+      };
+  meta?:
+    | T
+    | {
+        title?: T;
+        image?: T;
+        description?: T;
+      };
+  publishedAt?: T;
   slug?: T;
   slugLock?: T;
   updatedAt?: T;
@@ -1966,6 +2062,10 @@ export interface TaskSchedulePublish {
       | ({
           relationTo: 'posts';
           value: number | Post;
+        } | null)
+      | ({
+          relationTo: 'portfolioItem';
+          value: number | PortfolioItem;
         } | null);
     global?: string | null;
     user?: (number | null) | User;
