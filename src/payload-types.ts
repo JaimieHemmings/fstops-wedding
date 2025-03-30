@@ -179,6 +179,7 @@ export interface Page {
     | Testimonials
     | AccordionBlock
     | ContainerBlock
+    | MosaicGalleryBlock
   )[];
   meta?: {
     title?: string | null;
@@ -866,6 +867,24 @@ export interface FullWidthTextBlock {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "MosaicGalleryBlock".
+ */
+export interface MosaicGalleryBlock {
+  /**
+   * Drag and drop to reorder images
+   */
+  images?:
+    | {
+        media: number | Media;
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'mosaicGalleryBlock';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "portfolioItem".
  */
 export interface PortfolioItem {
@@ -1227,6 +1246,7 @@ export interface PagesSelect<T extends boolean = true> {
         testimonials?: T | TestimonialsSelect<T>;
         accordionBlock?: T | AccordionBlockSelect<T>;
         containerBlock?: T | ContainerBlockSelect<T>;
+        mosaicGalleryBlock?: T | MosaicGalleryBlockSelect<T>;
       };
   meta?:
     | T
@@ -1468,6 +1488,20 @@ export interface TwoColumnTextBlockSelect<T extends boolean = true> {
  */
 export interface FullWidthTextBlockSelect<T extends boolean = true> {
   text?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "MosaicGalleryBlock_select".
+ */
+export interface MosaicGalleryBlockSelect<T extends boolean = true> {
+  images?:
+    | T
+    | {
+        media?: T;
+        id?: T;
+      };
   id?: T;
   blockName?: T;
 }

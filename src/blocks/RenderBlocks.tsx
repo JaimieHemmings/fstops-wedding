@@ -18,6 +18,7 @@ import FullWidthTextBlock from '@/blocks/FullWidthText/Component'
 import TwoColumnTextBlock from '@/blocks/TwoColumnTextBlock/Component'
 import FullWidthImageBlock from '@/blocks/FullWidthImage/Component'
 import ContainerBlock from '@/blocks/ContainerBlock/Component'
+import MosaicGalleryBlock from '@/blocks/MosaicGalleryBlock/Component'
 
 const blockComponents = {
   archive: ArchiveBlock,
@@ -36,6 +37,7 @@ const blockComponents = {
   twoColumnTextBlock: TwoColumnTextBlock,
   fullWidthImageBlock: FullWidthImageBlock,
   containerBlock: ContainerBlock,
+  mosaicGalleryBlock: MosaicGalleryBlock,
 }
 
 export const RenderBlocks: React.FC<{

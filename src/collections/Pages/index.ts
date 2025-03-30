@@ -19,6 +19,7 @@ import { generatePreviewPath } from '../../utilities/generatePreviewPath'
 import { revalidateDelete, revalidatePage } from './hooks/revalidatePage'
 import { BigTextBlock } from '@/blocks/BigText/config'
 import { ContainerBlock } from '@/blocks/ContainerBlock/config'
+import { MosaicGalleryBlock } from '@/blocks/MosaicGalleryBlock/config'
 import {
   MetaDescriptionField,
   MetaImageField,
@@ -81,7 +82,7 @@ export const Pages: CollectionConfig<'pages'> = {
             {
               name: 'layout',
               type: 'blocks',
-              blocks: [CallToAction, Content, MediaBlock, Archive, FormBlock,BigTextBlock, BasicGridBlock, OfferBlock, BigCtaBlock, Testimonials, AccordionBlock, ContainerBlock],
+              blocks: [CallToAction, Content, MediaBlock, Archive, FormBlock,BigTextBlock, BasicGridBlock, OfferBlock, BigCtaBlock, Testimonials, AccordionBlock, ContainerBlock,MosaicGalleryBlock],
               required: true,
               admin: {
                 initCollapsed: true,
