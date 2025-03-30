@@ -1,6 +1,4 @@
 import type { Metadata } from 'next'
-
-import { RelatedPosts } from '@/blocks/RelatedPosts/Component'
 import { PayloadRedirects } from '@/components/PayloadRedirects'
 import configPromise from '@payload-config'
 import { getPayload } from 'payload'
@@ -32,7 +30,6 @@ export async function generateStaticParams() {
   const params = portfolioItem.docs.map(({ slug }) => {
     return { slug }
   })
-
   return params
 }
 
@@ -53,14 +50,10 @@ export default async function Post({ params: paramsPromise }: Args) {
   return (
     <article>
       <PageClient />
-
       {/* Allows redirects for valid pages too */}
       <PayloadRedirects disableNotFound url={url} />
-
       {draft && <LivePreviewListener />}
-
       <PostHero post={post} />
-
       <div className="flex flex-col items-center gap-4 pt-8">
         <div className="container pb-8">
           <RichText className="max-w-[48rem] mx-auto prose md:prose-md lg:prose-lg xl:prose-xl text-jet" data={post.content} enableGutter={false} />
@@ -73,7 +66,7 @@ export default async function Post({ params: paramsPromise }: Args) {
               post.media.imagesLeft.map((image, index) => (
                 <Media
                   key={index}
-                  imgClassName="rounded-lg"
+                imgClassName="w-full h-auto"
                   loading='lazy'
                   resource={image.media}
                 />
@@ -86,7 +79,7 @@ export default async function Post({ params: paramsPromise }: Args) {
             post.media.imagesRight.map((image, index) => (
               <Media
                 key={index}
-                imgClassName="rounded-lg"
+                imgClassName="w-full h-auto"
                 loading='lazy'
                 resource={image.media}
               />
