@@ -83,7 +83,7 @@ export async function Footer() {
           {footerData.instagramLink && (
             <Link 
               className="group font-semibold text-xl relative mt-5 border-b-2 border-white pb-2 inline-flex items-center text-white" 
-              href={footerData.instagramLink}
+              href={footerData.instagramLink} target="_blank"
             >
               Instagram
               <svg
