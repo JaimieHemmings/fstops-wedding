@@ -51,6 +51,7 @@ export default async function Page({ params: paramsPromise }: Args) {
         />
       </div>
 
+      {/* @ts-ignore */}
       <CollectionArchive posts={posts.docs} />
 
       <div className="container">
