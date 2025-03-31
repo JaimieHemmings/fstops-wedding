@@ -34,7 +34,7 @@ export default async function Page() {
       <div className="container mb-16">
         <div className="text-center text-jet max-w-none">
           <h1 className="text-4xl md:text-7xl font-semibold">
-            Photographer's diary
+            Photographer&apos;s diary
           </h1>
         </div>
       </div>
