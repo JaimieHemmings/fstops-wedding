@@ -36,10 +36,12 @@ export const PortfolioItem: CollectionConfig<'portfolioItem'> = {
   defaultPopulate: {
     title: true,
     slug: true,
+    heroImage: true,
     meta: {
       image: true,
       description: true,
     },
+    publishedAt: true,
   },
   admin: {
     defaultColumns: ['title', 'slug', 'updatedAt'],
