@@ -5,7 +5,6 @@ import { useRouter } from 'next/navigation'
 import React, { useCallback, useState } from 'react'
 import { useForm, FormProvider } from 'react-hook-form'
 import RichText from '@/components/RichText'
-import { Button } from '@/components/ui/button'
 import type { SerializedEditorState } from '@payloadcms/richtext-lexical/lexical'
 
 import { fields } from './fields'
@@ -115,9 +114,6 @@ export const FormBlock: React.FC<
 
   return (
     <div className="container text-jet">
-      {enableIntro && introContent && !hasSubmitted && (
-        <RichText className="py-[5rem] text-jet" data={introContent} enableGutter={false} />
-      )}
       <div className="p-4 lg:p-6 bg-white rounded-2xl mb-[5rem]">
         <FormProvider {...formMethods}>
           {!isLoading && hasSubmitted && confirmationType === 'message' && (
@@ -127,6 +123,9 @@ export const FormBlock: React.FC<
           {error && <div>{`${error.status || '500'}: ${error.message || ''}`}</div>}
           {!hasSubmitted && (
             <form id={formID} onSubmit={handleSubmit(onSubmit)}>
+            {enableIntro && introContent && !hasSubmitted && (
+              <RichText className="my-[2rem] opacity-[0.6] text-jet text-xl font-semibold" data={introContent} enableGutter={false} />
+            )}
               <div className="mb-4 last:mb-0">
                 {formFromProps &&
                   formFromProps.fields &&

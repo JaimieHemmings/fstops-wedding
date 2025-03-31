@@ -17,7 +17,7 @@ export const Textarea: React.FC<
 > = ({ name, defaultValue, errors, label, register, required, rows = 3, width }) => {
   return (
     <Width width={width}>
-      <Label htmlFor={name}>
+      <Label htmlFor={name} className="sr-only">
         {label}
 
         {required && (
@@ -28,10 +28,10 @@ export const Textarea: React.FC<
       </Label>
 
       <TextAreaComponent
-        placeholder={defaultValue}
+        placeholder={label}
         id={name}
         rows={rows}
-        className="bg-[#f5f5f5] p-2 w-full border-none"
+        className="bg-[#f5f5f5] p-2 w-full border-none text-jet"
         {...register(name, { required: required })}
       />
 

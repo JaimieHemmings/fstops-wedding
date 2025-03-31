@@ -16,7 +16,7 @@ export const Email: React.FC<
 > = ({ name, defaultValue, errors, label, register, required, width }) => {
   return (
     <Width width={width}>
-      <Label htmlFor={name}>
+      <Label htmlFor={name} className="sr-only">
         {label}
 
         {required && (
@@ -26,8 +26,8 @@ export const Email: React.FC<
         )}
       </Label>
       <Input
-        placeholder="Enter your email"
         id={name}
+        placeholder={label}
         className="bg-[#f5f5f5] p-2 w-full border-none"
         type="text"
         {...register(name, { pattern: /^\S[^\s@]*@\S+$/, required })}

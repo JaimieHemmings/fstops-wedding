@@ -16,7 +16,7 @@ export const Text: React.FC<
 > = ({ name, defaultValue, errors, label, register, required, width }) => {
   return (
     <Width width={width}>
-      <Label htmlFor={name}>
+      <Label htmlFor={name} className="sr-only">
         {label}
 
         {required && (
@@ -26,7 +26,7 @@ export const Text: React.FC<
         )}
       </Label>
       <Input 
-        className="bg-[#f5f5f5] p-2 w-full border-none" placeholder={defaultValue} id={name} type="text" {...register(name, { required })} />
+        className="bg-[#f5f5f5] p-2 w-full border-none" placeholder={label} id={name} type="text" {...register(name, { required })} />
       {errors[name] && <Error name={name} />}
     </Width>
   )
