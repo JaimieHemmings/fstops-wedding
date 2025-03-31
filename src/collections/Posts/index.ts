@@ -42,10 +42,12 @@ export const Posts: CollectionConfig<'posts'> = {
     title: true,
     slug: true,
     categories: true,
+    heroImage: true,
     meta: {
       image: true,
       description: true,
     },
+    publishedAt: true,
   },
   admin: {
     defaultColumns: ['title', 'slug', 'updatedAt'],

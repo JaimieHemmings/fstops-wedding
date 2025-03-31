@@ -19,6 +19,7 @@ export async function Footer() {
         resource={footerData.backgroundImage}
         imgClassName="absolute inset-0 z-0 object-cover"
       />
+      <div className="bg-jet/60 absolute top-0 left-0 w-full h-full z-[1]" />
       <div className="py-[5rem] container mx-auto relative z-10 flex flex-col md:flex-row justify-between">
         <div className="basis-1/4 p-3 max-md:pt-[3rem]">
           <p className="inter text-white font-semibold pb-5 text-base opacity-[0.6]">

@@ -47,11 +47,25 @@ export const HeaderNav: React.FC<{ data: HeaderType }> = ({ data }) => {
         <div className="hidden md:flex flex-col justify-around p-3 basis-1/2">
           <h2 className="text-white text-5xl font-bold uppercase pb-0 p-5">FStops Photography</h2>
         </div>
-        <div className="h-full md:basis-1/2 flex flex-col justify-center max-md:min-h-screen max-md:w-full">
+        <div className="h-full md:basis-1/2 flex flex-col justify-center max-md:min-h-screen max-md:w-full gap-4">
           {navItems.map(({ link }, i) => {
+
+            if (i === navItems.length - 1) {
+              return (
+                <div key={i} className="flex flex-col gap-4">
+                  <div onClick={handleNavClick}>
+                    <Link href="/news" className="text-xl max-md:block text-center font-semibold hover:no-underline no-underline text-white">News</Link>
+                  </div>
+                  <div onClick={handleNavClick} >
+                    <CMSLink {...link} appearance="link" className="text-xl max-md:block text-center font-semibold hover:no-underline no-underline text-white" />
+                  </div>
+                </div>
+              )
+            }
+
             return (
               <div key={i} onClick={handleNavClick} >
-                <CMSLink {...link} appearance="link" className="text-xl max-md:block text-center font-semibold hover:no-underline no-underline py-3 text-white" />
+                <CMSLink {...link} appearance="link" className="text-xl max-md:block text-center font-semibold hover:no-underline no-underline text-white" />
               </div>
             )
           })}
