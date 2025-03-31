@@ -52,6 +52,7 @@ export default async function Page() {
 
 export function generateMetadata(): Metadata {
   return {
-    title: `Payload Website Template Posts`,
+    title: `FStops Weddings - Photographer's diary`,
+    description: `Explore the captivating world of photography through our blog. Discover tips, stories, and insights from a passionate photographer's journey. Join us in celebrating the art of capturing moments.`,
   }
 }
