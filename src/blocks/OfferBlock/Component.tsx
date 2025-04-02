@@ -82,7 +82,7 @@ const OfferBlock: React.FC<OfferBlockProps> = ({backgroundImage, title, subtitle
                       <div className="basis-1/2">
                         <Media
                           className="w-[60px] h-[60px]"
-                          imgClassName="grayscale rounded-lg w-full h-full object-cover"
+                          imgClassName="rounded-lg w-full h-full object-cover"
                           loading='lazy'
                           resource={service.icon}
                         />
