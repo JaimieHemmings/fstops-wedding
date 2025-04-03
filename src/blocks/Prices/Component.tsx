@@ -1,4 +1,5 @@
 import { Media } from '@/components/Media'
+import Image from 'next/image'
 import React from 'react'
 
 interface PricesBlockProps {
@@ -15,7 +16,14 @@ interface PricesBlockProps {
 const PricesBlock: React.FC<PricesBlockProps> = ({ title, subtitle, packages }) => {
   return (
     <section className="pb-[5rem] container">
-      <div className="container bg-[#dce2e0]/60 drop-shadow-lg rounded-lg p-5 py-[3rem] mt-10">
+      <div className="container bg-[#dce2e0]/60 drop-shadow-lg rounded-lg p-5 py-[3rem] mt-10  relative overflow-hidden">
+        <Image
+          src="/floral-bg.webp"
+          alt="Floral background"
+          width={0}
+          height={0}
+          className="w-full h-full top-0 left-0 object-cover absolute -z-10 opacity-40 mix-blend-multiply"
+        />
         <header className="flex flex-col gap-2 items-center mb-5 text-center">
           <h3 className="uppercase opacity-60 text-md tracking-widest">
             {title}
