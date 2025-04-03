@@ -180,6 +180,7 @@ export interface Page {
     | AccordionBlock
     | ContainerBlock
     | MosaicGalleryBlock
+    | PricesBlock
   )[];
   meta?: {
     title?: string | null;
@@ -885,6 +886,29 @@ export interface MosaicGalleryBlock {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "PricesBlock".
+ */
+export interface PricesBlock {
+  title?: string | null;
+  subtitle?: string | null;
+  /**
+   * Add your packages here.
+   */
+  packages?:
+    | {
+        packageImage: number | Media;
+        packageName?: string | null;
+        description?: string | null;
+        price?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'pricesBlock';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "portfolioItem".
  */
 export interface PortfolioItem {
@@ -1247,6 +1271,7 @@ export interface PagesSelect<T extends boolean = true> {
         accordionBlock?: T | AccordionBlockSelect<T>;
         containerBlock?: T | ContainerBlockSelect<T>;
         mosaicGalleryBlock?: T | MosaicGalleryBlockSelect<T>;
+        pricesBlock?: T | PricesBlockSelect<T>;
       };
   meta?:
     | T
@@ -1500,6 +1525,25 @@ export interface MosaicGalleryBlockSelect<T extends boolean = true> {
     | T
     | {
         media?: T;
+        id?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "PricesBlock_select".
+ */
+export interface PricesBlockSelect<T extends boolean = true> {
+  title?: T;
+  subtitle?: T;
+  packages?:
+    | T
+    | {
+        packageImage?: T;
+        packageName?: T;
+        description?: T;
+        price?: T;
         id?: T;
       };
   id?: T;

@@ -20,6 +20,7 @@ import { revalidateDelete, revalidatePage } from './hooks/revalidatePage'
 import { BigTextBlock } from '@/blocks/BigText/config'
 import { ContainerBlock } from '@/blocks/ContainerBlock/config'
 import { MosaicGalleryBlock } from '@/blocks/MosaicGalleryBlock/config'
+import { PricesBlock } from '@/blocks/Prices/config'
 import {
   MetaDescriptionField,
   MetaImageField,
@@ -82,7 +83,7 @@ export const Pages: CollectionConfig<'pages'> = {
             {
               name: 'layout',
               type: 'blocks',
-              blocks: [CallToAction, Content, MediaBlock, Archive, FormBlock,BigTextBlock, BasicGridBlock, OfferBlock, BigCtaBlock, Testimonials, AccordionBlock, ContainerBlock,MosaicGalleryBlock],
+              blocks: [CallToAction, Content, MediaBlock, Archive, FormBlock,BigTextBlock, BasicGridBlock, OfferBlock, BigCtaBlock, Testimonials, AccordionBlock, ContainerBlock,MosaicGalleryBlock, PricesBlock],
               required: true,
               admin: {
                 initCollapsed: true,
