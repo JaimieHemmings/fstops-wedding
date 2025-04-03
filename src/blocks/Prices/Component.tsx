@@ -16,7 +16,7 @@ interface PricesBlockProps {
 const PricesBlock: React.FC<PricesBlockProps> = ({ title, subtitle, packages }) => {
   return (
     <section className="pb-[5rem] container">
-      <div className="container bg-[#dce2e0]/60 drop-shadow-lg rounded-lg p-5 py-[3rem] mt-10  relative overflow-hidden">
+      <div className="container bg-[#dce2e0] drop-shadow-lg rounded-lg p-5 py-[3rem] mt-10  relative overflow-hidden">
         <Image
           src="/floral-bg.webp"
           alt="Floral background"
@@ -34,20 +34,22 @@ const PricesBlock: React.FC<PricesBlockProps> = ({ title, subtitle, packages }) 
         </header>
         <div className="flex flex-col gap-5 md:flex-row items-stretch justify-between py-[1rem] text-center">
           {packages.map((pkg, i) => (
-            <div key={i} className="flex flex-col gap-2 basis-1/3 h-full">
-              <Media
-                resource={pkg.packageImage}
-                className="w-full h-[400px] object-cover rounded-lg"
-                imgClassName="w-full h-full object-cover rounded-lg"
-              />
-              <div className="bg-white pb-3 flex flex-col flex-1">
+            <div key={i} className="flex flex-col w-1/3 bg-white">
+              <div className="h-[400px]">
+                <Media
+                  resource={pkg.packageImage}
+                  className="w-full h-full object-cover m-0 p-0"
+                  imgClassName="w-full h-full object-cover m-0 p-0"
+                />
+              </div>
+              <div className="bg-white pb-3 flex flex-col flex-1 border-t-[16px] border-[#dce2e0]">
                 <h4 className="text-xl mt-3">
                   {pkg.packageName}
                 </h4>
                 <p className="opacity-70 text-sm p-3 prose md:prose-md flex-1">
                   {pkg.description}
                 </p>
-                <p className="text-xl">
+                <p className="text-xl mt-auto">
                   £ {new Intl.NumberFormat('en-GB').format(Number(pkg.price))}
                 </p>
               </div>
