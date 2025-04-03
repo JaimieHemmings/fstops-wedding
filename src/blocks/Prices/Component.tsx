@@ -24,26 +24,26 @@ const PricesBlock: React.FC<PricesBlockProps> = ({ title, subtitle, packages }) 
             {subtitle}
           </p>
         </header>
-        <div className="flex flex-col gap-5 md:flex-row items-center justify-between py-[1rem] text-center">
+        <div className="flex flex-col gap-5 md:flex-row items-stretch justify-between py-[1rem] text-center">
           {packages.map((pkg, i) => (
-          <div key={i} className="flex flex-col gap-2 basis-1/3">
-            <Media
-              resource={pkg.packageImage}
-              className="w-full h-[400px] object-cover rounded-lg"
-              imgClassName="w-full h-full object-cover rounded-lg"
-            />
-            <div className="bg-white pb-3">
-              <h4 className="text-xl mt-3">
-                {pkg.packageName}
-              </h4>
-              <p className="opacity-70 text-sm p-3 prose md:prose-md">
-                {pkg.description}
-              </p>
-              <p className="text-xl">
-                £ {new Intl.NumberFormat('en-GB').format(Number(pkg.price))}
-              </p>
+            <div key={i} className="flex flex-col gap-2 basis-1/3 h-full">
+              <Media
+                resource={pkg.packageImage}
+                className="w-full h-[400px] object-cover rounded-lg"
+                imgClassName="w-full h-full object-cover rounded-lg"
+              />
+              <div className="bg-white pb-3 flex flex-col flex-1">
+                <h4 className="text-xl mt-3">
+                  {pkg.packageName}
+                </h4>
+                <p className="opacity-70 text-sm p-3 prose md:prose-md flex-1">
+                  {pkg.description}
+                </p>
+                <p className="text-xl">
+                  £ {new Intl.NumberFormat('en-GB').format(Number(pkg.price))}
+                </p>
+              </div>
             </div>
-          </div>
           ))}
         </div>
       </div>
