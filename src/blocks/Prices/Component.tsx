@@ -34,7 +34,7 @@ const PricesBlock: React.FC<PricesBlockProps> = ({ title, subtitle, packages }) 
         </header>
         <div className="flex flex-col gap-5 md:flex-row items-stretch justify-between py-[1rem] text-center">
           {packages.map((pkg, i) => (
-            <div key={i} className="flex flex-col w-1/3 bg-white">
+            <div key={i} className="flex flex-col w-full md:w-1/3 bg-white">
               <div className="h-[400px]">
                 <Media
                   resource={pkg.packageImage}
